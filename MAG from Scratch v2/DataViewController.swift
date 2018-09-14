@@ -23,14 +23,20 @@ class DataViewController: UIViewController {
     }
 
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    //Logout Button
     @IBAction func logoutButton(_ sender: Any) {
         performSegue(withIdentifier: "logout", sender: self)
     }
+    
+    
+    
+    //Flip the logoutRequested flag before segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "logout" {
+            let dataVC = segue.destination as! ViewController
+            dataVC.logoutRequested = true
+        }
+    }
+    
     
 }
