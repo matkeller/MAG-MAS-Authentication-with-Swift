@@ -16,6 +16,7 @@
 		5085FF0B214B7AC800326035 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5085FF0A214B7AC800326035 /* README.md */; };
 		508F9628214ACD2F00658A73 /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 508F9627214ACD2F00658A73 /* msso_config.json */; };
 		508F962A214AE60500658A73 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F9629214AE60500658A73 /* DataViewController.swift */; };
+		50F6D92E214B8225006B0D7F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 50F6D92D214B8225006B0D7F /* .gitignore */; };
 		B62F47DA5B636EE6FD8BA44D /* Pods_MAG_from_Scratch_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B8C69C325F83F2678AAC78 /* Pods_MAG_from_Scratch_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		5085FF0A214B7AC800326035 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		508F9627214ACD2F00658A73 /* msso_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
 		508F9629214AE60500658A73 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		50F6D92D214B8225006B0D7F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7632EFB7C577C5AC60C73845 /* Pods-MAG from Scratch v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAG from Scratch v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2.debug.xcconfig"; sourceTree = "<group>"; };
 		D72AFB41078D53BC2F413BDB /* Pods-MAG from Scratch v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAG from Scratch v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 		506E7D21214AAB71005837E5 = {
 			isa = PBXGroup;
 			children = (
+				50F6D92D214B8225006B0D7F /* .gitignore */,
 				5085FF0A214B7AC800326035 /* README.md */,
 				506E7D2C214AAB71005837E5 /* MAG from Scratch v2 */,
 				506E7D2B214AAB71005837E5 /* Products */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5085FF0B214B7AC800326035 /* README.md in Resources */,
+				50F6D92E214B8225006B0D7F /* .gitignore in Resources */,
 				506E7D38214AAB72005837E5 /* LaunchScreen.storyboard in Resources */,
 				506E7D46214AB355005837E5 /* ca logo large.png in Resources */,
 				508F9628214ACD2F00658A73 /* msso_config.json in Resources */,
