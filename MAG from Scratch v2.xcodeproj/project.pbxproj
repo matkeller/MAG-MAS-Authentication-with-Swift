@@ -12,9 +12,14 @@
 		506E7D33214AAB71005837E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506E7D31214AAB71005837E5 /* Main.storyboard */; };
 		506E7D35214AAB72005837E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506E7D34214AAB72005837E5 /* Assets.xcassets */; };
 		506E7D38214AAB72005837E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506E7D36214AAB72005837E5 /* LaunchScreen.storyboard */; };
+		506E7D46214AB355005837E5 /* ca logo large.png in Resources */ = {isa = PBXBuildFile; fileRef = 506E7D44214AB355005837E5 /* ca logo large.png */; };
+		508F9628214ACD2F00658A73 /* msso_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 508F9627214ACD2F00658A73 /* msso_config.json */; };
+		508F962A214AE60500658A73 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508F9629214AE60500658A73 /* DataViewController.swift */; };
+		B62F47DA5B636EE6FD8BA44D /* Pods_MAG_from_Scratch_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B8C69C325F83F2678AAC78 /* Pods_MAG_from_Scratch_v2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37B8C69C325F83F2678AAC78 /* Pods_MAG_from_Scratch_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAG_from_Scratch_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506E7D2A214AAB71005837E5 /* MAG from Scratch v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAG from Scratch v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		506E7D2D214AAB71005837E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		506E7D2F214AAB71005837E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,11 @@
 		506E7D34214AAB72005837E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		506E7D37214AAB72005837E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		506E7D39214AAB72005837E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506E7D44214AB355005837E5 /* ca logo large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ca logo large.png"; sourceTree = "<group>"; };
+		508F9627214ACD2F00658A73 /* msso_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = msso_config.json; sourceTree = "<group>"; };
+		508F9629214AE60500658A73 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		7632EFB7C577C5AC60C73845 /* Pods-MAG from Scratch v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAG from Scratch v2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2.debug.xcconfig"; sourceTree = "<group>"; };
+		D72AFB41078D53BC2F413BDB /* Pods-MAG from Scratch v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAG from Scratch v2.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62F47DA5B636EE6FD8BA44D /* Pods_MAG_from_Scratch_v2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B08D3D0B540E58175956390 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37B8C69C325F83F2678AAC78 /* Pods_MAG_from_Scratch_v2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		506E7D21214AAB71005837E5 = {
 			isa = PBXGroup;
 			children = (
 				506E7D2C214AAB71005837E5 /* MAG from Scratch v2 */,
 				506E7D2B214AAB71005837E5 /* Products */,
+				F372D7FBD24330D1D5E8310D /* Pods */,
+				1B08D3D0B540E58175956390 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,26 @@
 		506E7D2C214AAB71005837E5 /* MAG from Scratch v2 */ = {
 			isa = PBXGroup;
 			children = (
-				506E7D2D214AAB71005837E5 /* AppDelegate.swift */,
-				506E7D2F214AAB71005837E5 /* ViewController.swift */,
+				508F9627214ACD2F00658A73 /* msso_config.json */,
 				506E7D31214AAB71005837E5 /* Main.storyboard */,
+				506E7D2F214AAB71005837E5 /* ViewController.swift */,
+				508F9629214AE60500658A73 /* DataViewController.swift */,
+				506E7D2D214AAB71005837E5 /* AppDelegate.swift */,
 				506E7D34214AAB72005837E5 /* Assets.xcassets */,
+				506E7D44214AB355005837E5 /* ca logo large.png */,
 				506E7D36214AAB72005837E5 /* LaunchScreen.storyboard */,
 				506E7D39214AAB72005837E5 /* Info.plist */,
 			);
 			path = "MAG from Scratch v2";
+			sourceTree = "<group>";
+		};
+		F372D7FBD24330D1D5E8310D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7632EFB7C577C5AC60C73845 /* Pods-MAG from Scratch v2.debug.xcconfig */,
+				D72AFB41078D53BC2F413BDB /* Pods-MAG from Scratch v2.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 506E7D3C214AAB72005837E5 /* Build configuration list for PBXNativeTarget "MAG from Scratch v2" */;
 			buildPhases = (
+				6323C3A7EC177002EEFCA6B8 /* [CP] Check Pods Manifest.lock */,
 				506E7D26214AAB71005837E5 /* Sources */,
 				506E7D27214AAB71005837E5 /* Frameworks */,
 				506E7D28214AAB71005837E5 /* Resources */,
+				BB6F733B20C8FE599ABC47E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				506E7D38214AAB72005837E5 /* LaunchScreen.storyboard in Resources */,
+				506E7D46214AB355005837E5 /* ca logo large.png in Resources */,
+				508F9628214ACD2F00658A73 /* msso_config.json in Resources */,
 				506E7D35214AAB72005837E5 /* Assets.xcassets in Resources */,
 				506E7D33214AAB71005837E5 /* Main.storyboard in Resources */,
 			);
@@ -130,12 +167,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6323C3A7EC177002EEFCA6B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MAG from Scratch v2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB6F733B20C8FE599ABC47E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/MASConnecta/MASConnecta.framework",
+				"${PODS_ROOT}/MASFoundation/MASFoundation.framework",
+				"${PODS_ROOT}/MASIdentityManagement/MASIdentityManagement.framework",
+				"${PODS_ROOT}/MASStorage/MASStorage.framework",
+				"${PODS_ROOT}/MASUI/MASUI.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASConnecta.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASIdentityManagement.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASStorage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MAG from Scratch v2/Pods-MAG from Scratch v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		506E7D26214AAB71005837E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				506E7D30214AAB71005837E5 /* ViewController.swift in Sources */,
+				508F962A214AE60500658A73 /* DataViewController.swift in Sources */,
 				506E7D2E214AAB71005837E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +369,7 @@
 		};
 		506E7D3D214AAB72005837E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7632EFB7C577C5AC60C73845 /* Pods-MAG from Scratch v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +387,7 @@
 		};
 		506E7D3E214AAB72005837E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72AFB41078D53BC2F413BDB /* Pods-MAG from Scratch v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
