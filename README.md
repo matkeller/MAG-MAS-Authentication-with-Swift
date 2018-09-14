@@ -13,5 +13,8 @@ This sample app uses the MASFoundation framework of the MAS SDK.
 3. Open the .xcworkspace file.
 4. In the CA OAuth Manager, create an app, and export the msso_config file (https://you_server_name:8443/oauth/manager). For help with this file, see [iOS Guide](https://www.ca.com/us/developers/mas/docs.html?id=1).
 5. Copy the contents of the exported msso_config into the msso_config file in Xcode workspace.
-6. Build and Deploy the app to a device or emulator.
+6. Do a Clean, Build, and then a Deploy the app to a device or emulator.
+
+Note:  I noticed errors saying some of the cocoapods (i.e. SVProgressHUD) didn't load.  I proceeded with a Clean, Build and Deploy anyways and it works and the errors go away.
+
 
