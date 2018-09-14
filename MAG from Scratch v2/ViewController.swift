@@ -11,6 +11,7 @@ import MASFoundation
 import SVProgressHUD
 
 
+
 class ViewController: UIViewController {
     
     var username = ""
@@ -22,18 +23,20 @@ class ViewController: UIViewController {
 
     var masState = MAS.masState()
 
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Debugging Info in the absense of documentation
         print ("--- Before MAS.start ---")
         print ("masState.rawValue: \(masState.rawValue)")
         var loggedIn = MASAuthenticationStatus.notLoggedIn.rawValue
         print ("Logged in? \(loggedIn)")
-
         print ("Auth status? \(MASAuthenticationStatus.RawValue())")
         
         
+        //Start MAS
         MAS.setGrantFlow(MASGrantFlow.password)
         MAS.start(withDefaultConfiguration: true) { (completed, error) in
             SVProgressHUD.show(withStatus: "Starting MAS")
@@ -48,32 +51,31 @@ class ViewController: UIViewController {
         }
 
         
-
+        //Debugging Info in the absense of documentation
         print ("--- After MAS.start ---")
         print ("masState.rawValue: \(masState.rawValue)")
         loggedIn = MASAuthenticationStatus.notLoggedIn.rawValue
         print ("Logged in? \(loggedIn)")
         print ("Auth status? \(MASAuthenticationStatus.RawValue())")
-
-
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
+
+    //Login the user with MAG
+
     @IBAction func loginBtn(_ sender: UIButton) {
-        //Login the user with MAG
-        
         username = usernameTextField.text!
         password = passwordTextField.text!
         
-//        print ("Username is:  \(username)")
-//        print ("Password is:  \(password)")
-        
-        SVProgressHUD.show(withStatus: "Starting MAS")
-        
+        SVProgressHUD.show(withStatus: "Performing Login")
+
         MASUser.login(withUserName: username, password: password) { (completed, error) in
             print ("...Starting Login as: \(self.username)...")
             if (completed == true) {
@@ -86,6 +88,10 @@ class ViewController: UIViewController {
                 print ("Auth status? \(MASAuthenticationStatus.RawValue())")
 
 
+        
+                
+                //Retrieve data
+                
                 SVProgressHUD.show(withStatus: "Retrieving Data")
                 MAS.getFrom("/protected/resource/products", withParameters: ["operation":"listProducts"], andHeaders: nil, completion: { (response, error) in
                     SVProgressHUD.dismiss()
@@ -95,30 +101,6 @@ class ViewController: UIViewController {
                     //Perform segue now that we have data
                     self.performSegue(withIdentifier: "loggedIn", sender: self)
                 })
-                
-
-                
-//                print ("...Getting MAS User Info...")
-//                MASUser.current()?.requestInfo(completion: { (masUser, error) in
-//                    //print("1 \(masUser?.givenName ?? "empty")")
-//                    //print("2 \(masUser?.familyName ?? "empty")")
-//                    // print("3 \(masUser?.emailAddresses ?? "empty")")
-//                    // print("4 \(masUser?.active ?? "empty")")
-//                    //print("5 \(masUser?.accessToken ?? "empty")")
-//
-//                    self.userData = masUser?.debugDescription ?? "empty"
-//                    //print("MAS Debug User Info: \(self.userData)")
-//                    
-//                    //Perform segue now that we have data
-//                    self.performSegue(withIdentifier: "loggedIn", sender: self)
-//                    
-//                })
-                
-                
-//                var builder = MASRequestBuilder.init(httpMethod: "GET")
-//                builder.endPoint = "foo"
-                
-                
                 
             } else {
                 print ("MAS Login   NOT successful.  Errors: ")
