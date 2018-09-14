@@ -12,7 +12,6 @@ import SVProgressHUD
 import SwiftyJSON
 
 
-
 class ViewController: UIViewController {
     
     var username = ""
@@ -29,15 +28,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Debugging Info in the absense of documentation
-        print ("--- Before MAS.start ---")
-        print ("masState.rawValue: \(masState.rawValue)")
-        var loggedIn = MASAuthenticationStatus.notLoggedIn.rawValue
-        print ("Logged in? \(loggedIn)")
-        print ("Auth status? \(MASAuthenticationStatus.RawValue())")
-        print ("Logout requested?: \(logoutRequested)")
-        
         
         //Handle logoutRequested
         if logoutRequested == true {
@@ -59,14 +49,6 @@ class ViewController: UIViewController {
                 print (error!)
             }
         }
-
-        
-        //Debugging Info in the absense of documentation
-        print ("--- After MAS.start ---")
-        print ("masState.rawValue: \(masState.rawValue)")
-        loggedIn = MASAuthenticationStatus.notLoggedIn.rawValue
-        print ("Logged in? \(loggedIn)")
-        print ("Auth status? \(MASAuthenticationStatus.RawValue())")
     }
 
     
@@ -102,8 +84,8 @@ class ViewController: UIViewController {
                     ////////print("Products response: \(response?.debugDescription ?? "Error: No data returned.")")
                     
 
- 
-//                    //Parse JSON
+                    
+            //TODO: Parse JSON
 //                    print("Try to parse JSON...")
 //                    let resultJSON : JSON = JSON(response!)
 //                    if let products = resultJSON["MASResponseInfoBodyInfoKey"]["products"]["name"].string {
@@ -112,7 +94,7 @@ class ViewController: UIViewController {
 //                        print ("Error parsing JSON")
 //                    }
 
-                    //Send raw data instead of parsed json
+                    //Send raw data for now instead of parsed json
                     self.userData = (response?.debugDescription)!
                     
                     //Perform segue now that we have data

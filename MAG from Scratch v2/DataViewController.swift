@@ -30,7 +30,7 @@ class DataViewController: UIViewController {
     
     
     
-    //Flip the logoutRequested flag before segue
+    //Toggle the logoutRequested flag before segue to trigger a logout
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "logout" {
             let dataVC = segue.destination as! ViewController
