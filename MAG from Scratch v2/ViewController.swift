@@ -35,7 +35,6 @@ class ViewController: UIViewController {
             logoutRequested = false
         }
         
-        
         //Start MAS
         MAS.setGrantFlow(MASGrantFlow.password)
         MAS.start(withDefaultConfiguration: true) { (completed, error) in
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
             print ("...Starting MAS!")
             if (completed == true) {
                 SVProgressHUD.dismiss()
-                print ("MAS START COMPLETED!")
+                print ("MAS start completed!")
             } else {
                 print ("MAS   NOT   STARTED.  Errors: ")
                 print (error!)
@@ -69,38 +68,32 @@ class ViewController: UIViewController {
             if (completed == true) {
                 SVProgressHUD.dismiss()
                 print ("MAS Login Successful!")
-                print ("masState.rawValue: \(self.masState.rawValue)")
-                
-                let loggedIn = MASAuthenticationStatus.notLoggedIn.rawValue
-                print ("Logged in? \(loggedIn)")
-                print ("Auth status? \(MASAuthenticationStatus.RawValue())")
-
                 
                 //Retrieve data
                 SVProgressHUD.show(withStatus: "Retrieving Data")
                 MAS.getFrom("/protected/resource/products", withParameters: ["operation":"listProducts"], andHeaders: nil, completion: { (response, error) in
+                    //We have data!
                     SVProgressHUD.dismiss()
+                    //print("Products response: \(response!["MASResponseInfoBodyInfoKey"]!) ")
                     
-                    ////////print("Products response: \(response?.debugDescription ?? "Error: No data returned.")")
+                    //Parse JSON
+                    var data = ""
+                    print("Try to parse JSON...")
+                    let resultJSON : JSON = JSON(response!["MASResponseInfoBodyInfoKey"]!)
+                    for result in resultJSON["products"].arrayValue {
+                        //let id = result["id"].stringValue
+                        let name = result["name"].stringValue
+                        let price = result["price"].stringValue
+                        
+                        data += ("\(name)   $\(price) \n")
+                    }
+                    print (data)
                     
-
-                    
-            //TODO: Parse JSON
-//                    print("Try to parse JSON...")
-//                    let resultJSON : JSON = JSON(response!)
-//                    if let products = resultJSON["MASResponseInfoBodyInfoKey"]["products"]["name"].string {
-//                        print ("Products: \(products)")
-//                    } else {
-//                        print ("Error parsing JSON")
-//                    }
-
-                    //Send raw data for now instead of parsed json
-                    self.userData = (response?.debugDescription)!
+                    self.userData = data
                     
                     //Perform segue now that we have data
                     self.performSegue(withIdentifier: "loggedIn", sender: self)
                 })
-                
             } else {
                 print ("MAS Login   NOT successful.  Errors: ")
                 print (error!)
@@ -146,11 +139,7 @@ class ViewController: UIViewController {
                 })
             }
         }
-        
-        
     }
-    
-    
     
     
     
